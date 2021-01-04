@@ -35,11 +35,11 @@ C6502::~C6502() {
 }
 
 uint8_t C6502::read(uint16_t address){
-    return bus->read(address, false);
+    return bus->cpuRead(address, false);
 }
 
 void C6502::write(uint16_t address, uint8_t data) {
-    bus->write(address, data);
+    bus->cpuWrite(address, data);
 }
 
 void C6502::clock() {
