@@ -1,5 +1,8 @@
-﻿  C6502.cpp
+﻿  Bus.cpp
+C:\Users\Andrew\Desktop\NES_Emulator\NES_Emulator\src\Bus.cpp(51,40): warning C4805: '&': unsafe mix of type 'uint16_t' and type 'bool' in operation
+  C6502.cpp
   Cartridge.cpp
-  main.cpp
+C:\Users\Andrew\Desktop\NES_Emulator\NES_Emulator\src\Cartridge.cpp(58,20): error C2082: redefinition of formal parameter 'data'
+C:\Users\Andrew\Desktop\NES_Emulator\NES_Emulator\src\Cartridge.cpp(111,20): error C2082: redefinition of formal parameter 'data'
+  P2C02.cpp
   Generating Code...
-  NES_Emulator.vcxproj -> C:\Users\Andrew\Desktop\NES_Emulator\NES_Emulator\x64\Debug\NES_Emulator.exe

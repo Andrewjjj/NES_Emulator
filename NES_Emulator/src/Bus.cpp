@@ -17,9 +17,14 @@ Bus::~Bus() {
 
 void Bus::cpuWrite(uint16_t address, uint8_t data) 
 {
+    // Give cartridge the priority, but unlikely to happen. Why would it interfere with the CPU
+    if (cart->cpuWrite(address, data))
+    {
+
+    }
 
     // Check if the address is within the ram memory range
-    if(address >= 0x0000 && address <= 0xFFFF)
+    else if(address >= 0x0000 && address <= 0xFFFF)
     {
         cpuRam[address & 0x07FF] = data;
     }
@@ -33,8 +38,11 @@ uint8_t Bus::cpuRead(uint16_t address, bool bReadOnly)
 {
     uint8_t data = 0x00;
 
+    if (cart->cpuRead(address, data)) {
 
-    if(address >= 0x0000 && address <= 0x1FFF)
+    }
+
+    else if(address >= 0x0000 && address <= 0x1FFF)
     {   
         data = cpuRam[address & 0x07FF];
     }
